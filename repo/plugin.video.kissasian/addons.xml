@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="plugin.video.kissasian" version="1.0.0" name="Kissasian" provider-name="Starbomberman, The[COLOR tan]Highway[/COLOR], Marquerite, konbon">
+	<requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  	<import addon="script.module.metahandler" />
+  	<import addon="script.common.plugin.cache"  />
+  	<import addon="script.module.addon.common" optional="true" />
+  	<import addon="script.module.t0mm0.common" optional="true" />
+  	<import addon="script.module.pysqlite" optional="true" />
+  	<import addon="script.module.sqlite" optional="true" />
+  	<import addon="script.module.myconnpy" optional="true" />
+  	<import addon="script.module.urlresolver" />
+		<import addon="script.module.simplejson" />
+		<import addon="script.module.beautifulsoup" />
+	
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Handles Videos for https://kissasian.sh/</summary>
+		<description>Play videos from kissasian.sh.  This project has been ported from the current version of my own KissAnime addon.  This project may end up getting re-ported from my KissAnime Re-write project, once that gets finished.  Remember to check out kissasian.sh's site whenever your at a PC. </description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="plugin.video.kissasian" name="Kissasian Repo" version="1.0" provider-name="Starbomberman">
+    <extension point="xbmc.addon.repository" name="Example Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/starbomberman/repository.thehighway/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/starbomberman/repository.thehighway/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/starbomberman/repository.thehighway/master/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Handles Videos for https://kissasian.sh</summary>
+        <description></description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="service.nuc.recording.led" name="Recording Status via NUC LED" version="1.0" provider-name="starbomberman">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="xbmc.json" version="6.32.4"/>
+	</requires>
+	<extension point="xbmc.service" library="service.py" start="login">
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Recording Status via NUC LED</summary>
+		<description lang="en">Control Intel NUC front LEDs to show recording status</description>
+		<disclaimer>This addon makes no warranties, expressed or implied, and
+			hereby disclaims and negates all other warranties, including without
+			limitation, implied warranties or conditions of merchantability,
+			fitness for a particular purpose, or non-infringement of intellectual
+			property or other violation of rights.
+		</disclaimer>
+		<license>MIT</license>
+		<platform>all</platform>
+		<source>https://github.com/starbomberman/service.recording-led</source>
+	</extension>
+</addon>
+
+<addon id="program.mount.truecrypt" name="Mount TrueCrypt Container" version="2.1.1" provider-name="starbomberman">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>linux</platform>
+		<summary>Mount TrueCrypt Files</summary>
+		<description>Mount and Unmount TrueCrypt and/or VeraCrypt Containers within Kodi on Linux-based OSes.  Windows-based TrueCrypt is not supported by this addon!</description>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>fanart.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="script.linux.nm"
+       name="Network-Manager"
+       version="18.0.0"
+       provider-name="starbomberman">
+  <requires>
+    <import addon="xbmc.python" version="2.19.0"/>
+  </requires>
+  <extension point="xbmc.python.script"
+             library="default.py" />
+  <extension point="xbmc.addon.metadata">
+  	<language>en</language>
+    <platform>linux</platform>
+    <summary lang="en">xbmc Network-Manager front-end. Configures wifi from within xbmc.</summary>
+    <description lang="en">xbmc Network-Manager front-end. Configures wifi from within xbmc. Requires Network-Manager 0.9, which are included in XBMCbuntu.</description>
+  </extension>
+</addon>
+
+<addon id="service.ncid.call.notifications" name="Call Notifications" version="1.0" provider-name="starbomberman">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.twisted"/>
+        <import addon="script.module.t0mm0.common"/>
+        <import addon="script.module.zope.interface"/>
+    </requires>
+    <extension point="xbmc.service" library="service.py" start="bootServices">
+    </extension>
+    <extension point="xbmc.python.module" library="resources/lib"/>
+    <extension point="xbmc.addon.metadata">
+        <summary>Show incoming phonecalls in Kodi</summary>
+        <description>Works with Ncid to show incoming phonecalls in Kodi</description>
+        <disclaimer>This addon makes no warranties, expressed or implied, and
+            hereby disclaims and negates all other warranties, including without
+            limitation, implied warranties or conditions of merchantability,
+            fitness for a particular purpose, or non-infringement of intellectual
+            property or other violation of rights.
+        </disclaimer>
+        <license>MIT</license>
+        <platform>all</platform>
+        <source>https://github.com/starbomberman/service.ncid.call.notifications</source>
+    </extension>
+</addon>
+
+<addon id="program.launcher.chrome" name="Chrome" version="1.0.1" provider-name="starbomberman">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>linux windx</platform>
+		<summary lang="en">Kodi Launches Google Chrome</summary>
+		<summary lang="es">Kodi Inicia Google Chrome</summary>
+		<summary lang="fr">Raccourci Google Chrome pour Kodi</summary>
+		<description lang="en">Addon for Kodi to launch Google Chrome.[CR]A fast, secure, and free web browser built for the modern web. Chrome syncs bookmarks across all your devices, fills out forms automatically, and so much more. </description>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<language>en</language>
+		<source>https://github.com/starbomberman/program.launcher.chrome/</source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>fanart.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="script.module.urlresolver" name="URLResolver" version="5.0.66" provider-name="tvaddons">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0" />
+        <import addon="plugin.video.youtube" optional="true" />
+        <import addon="script.module.python.twitch" optional="true" />
+        <import addon="script.module.cryptopy" version="1.2.6" optional="true" />
+        <import addon="plugin.video.gdrive" optional="true" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="lib/default.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
+        <summary lang="es">Resolver enlaces a videos de sitios populares para poder reproducirlos en XBMC/Kodi.</summary>
+        <summary lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju.</summary>
+        <summary lang="el">Επίλυση συνδέσμων κοινών εξυπηρετητών σε μορφή βίντεο ικανό για αναπαραγωγή στο XBMC/Kodi.</summary>
+        <description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
+        <description lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
+        <forum>https://www.tvaddons.co/forums</forum>
+        <website>https://www.tvaddons.co</website>
+    </extension>
+</addon>
+
+<addon id="program.launcher.firefox" name="FireFox" version="1.0" provider-name="starbomberman">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>linux windx</platform>
+		<summary lang="en">Kodi Launches FireFox</summary>
+		<summary lang="es">Kodi Inicia FireFox</summary>
+		<summary lang="fr">Raccourci FireFox pour Kodi</summary>
+		<description lang="en">Addon for Kodi to launch FireFox.[CR]Download Mozilla Firefox, a free Web browser. Firefox is created by a global non-profit dedicated to putting individuals in control online.</description>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<language>en</language>
+		<source>https://github.com/starbomberman/script.kodi.launches.firefox/</source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>fanart.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="script.module.twisted" name="Twisted" version="13.2.1" provider-name="mablae">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.zope.interface" version="4.0.5"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">twisted Network Lib repack for XBMC</summary>
+		<description lang="en">Twisted is an event-driven networking engine written in
+            Python and licensed under the open source MIT Licence</description>
+		<disclaimer>This addon makes no warranties, expressed or implied, and
+			hereby disclaims and negates all other warranties, including without
+			limitation, implied warranties or conditions of merchantability,
+			fitness for a particular purpose, or non-infringement of intellectual
+			property or other violation of rights. Further, PlayIt addon does not
+			warrant or make any representations concerning the accuracy, likely
+			results, or reliability of the use of the materials on the Internet
+			web site where from data is retrieved or otherwise relating to such
+			materials or on any sites linked to this addon. Videos are soruced
+			from video-hosting websites that are having full rights to remove
+			such access to video if required.</disclaimer>
+		<license>MIT</license>
+		<platform>all</platform>
+		<source>https://github.com/mablae/script.module.twisted.git</source>
+		<website>http://twistedmatrix.com/trac/wiki</website>
+	</extension>
+</addon>
+
+<addon id="script.module.zope.interface" name="Zope interface" version="4.0.5"
+       provider-name="mablae">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Zope Interface Lib repack for XBMC</summary>
+        <description lang="en">This package provides an implementation of "object interfaces" for Python.
+            Interfaces are a mechanism for labeling objects as conforming to a given
+            API or contract. So, this package can be considered as implementation of
+            the 'Design By Contract' methodology support in Python.
+        </description>
+        <disclaimer>This addon makes no warranties, expressed or implied, and
+            hereby disclaims and negates all other warranties, including without
+            limitation, implied warranties or conditions of merchantability,
+            fitness for a particular purpose, or non-infringement of intellectual
+            property or other violation of rights.
+        </disclaimer>
+        <license>ZPL</license>
+        <platform>all</platform>
+        <source>https://github.com/mablae/script.module.zope.interface.git</source>
+        <website>http://docs.zope.org/zope.interface/</website>
+    </extension>
+</addon>
+
+<addon id="script.kodi.launches.steam" name="Steam" version="1.0.0" provider-name="BrosMakingSoftware">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>linux windx osx</platform>
+		<summary lang="en">Kodi Launches Steam</summary>
+		<summary lang="es">Kodi Inicia Steam</summary>
+		<description lang="en">Addon for Kodi to launch Steam.[CR]Steam is the major online store for Windows, MacOS and Linux games and their related media. It also offers multiplayer and cross-platform gaming, in-home streaming, cloud saving, in-game voice and chat, achievements, VR, mods, hardware, devices and a huge and active gaming community. To install Steam, go to http://store.steampowered.com</description>
+		<description lang="es">Addon de Kodi para iniciar Steam.[CR]Steam es la mayor tienda en línea de juegos y sus medios relacionados para Windows, MacOS y Linux. Ofrece funciones de juego multijugador y multiplataforma, retransmisión en casa, guardados en la nube, voz y mensajería durante el juego, realidad virtual, mods para juegos, equipos, dispositivos y una inmensa y activa comunidad de jugadores. Para instalar Steam, visite http://store.steampowered.com</description>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<language>en es</language>
+		<source>https://github.com/BrosMakingSoftware/Kodi-Launches-Steam-Addon/</source>
+		<website>https://github.com/BrosMakingSoftware/Kodi-Launches-Steam-Addon/blob/master/README.md#kodi-launches-steam-addon</website>
+		<forum></forum>
+		<email>diego.hernandez.perez.cr@gmail.com</email>
+		<news></news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/steam-screenshots/screenshot1.jpg</screenshot>
+			<screenshot>resources/steam-screenshots/screenshot2.jpg</screenshot>
+			<screenshot>resources/steam-screenshots/screenshot3.jpg</screenshot>
+			<screenshot>resources/steam-screenshots/screenshot4.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Selected.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Selected-Information.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Settings-1.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Settings-2.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="program.launcher.remmina" name="Remmina" version="1.0" provider-name="starbomberman">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>linux windx</platform>
+		<summary lang="en">Kodi Launches Remmina</summary>
+		<summary lang="es">Kodi Inicia Remmina</summary>
+		<summary lang="fr">Raccourci Remmina pour Kodi</summary>
+		<description lang="en">Addon for Kodi to launch Remmina, a Remote Desktop Client for Ubuntu.</description>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<language>en</language>
+		<source>https://github.com/starbomberman/Kodi-Launches-Remmina-Addon/</source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.png</fanart>
+			<screenshot>fanart.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+
+<addon id="script.kodi.launches.emulationstation" name="EmulationStation" version="1.1.7" provider-name="BrosMakingSoftware">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+	</requires>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>linux windx</platform>
+		<summary lang="en">Kodi Launches EmulationStation</summary>
+		<summary lang="es">Kodi Inicia EmulationStation</summary>
+		<summary lang="fr">Raccourci EmulationStation pour Kodi</summary>
+		<description lang="en">Addon for Kodi to launch EmulationStation.[CR]EmulationStation is a cross-platform graphical front-end for emulators with controller navigation.[CR]Install and configure EmulationStation before using this launcher, for instructions and downloads, go to http://emulationstation.org/</description>
+		<description lang="es">Addon de Kodi para iniciar EmulationStation.[CR]EmulationStation es una interfaz gráfica multi-plataforma para emuladores con navegación por medio de controles (mandos).[CR]Instala y configura EmulationStation antes de usar este inicializador, para instrucciones y descargas, visite http://emulationstation.org/</description>
+		<description lang="fr">Addon pour lancer EmulationStation à partir de Kodi[CR] EmulationStation est une interface graphique multi-plateforme pour les émulateurs utilisant un controlleur pour la navigation. [CR] Installez et configurez EmulationStation avec d'utiliser ce raccourci, pour des instructions et le lien de téléchargement, consultez http://emulationstation.org/</description>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<language>en fr es</language>
+		<source>https://github.com/BrosMakingSoftware/Kodi-Launches-EmulationStation-Addon/</source>
+		<website>https://github.com/BrosMakingSoftware/Kodi-Launches-EmulationStation-Addon/blob/master/README.md#kodi-launches-emulationstation-addon</website>
+		<forum></forum>
+		<email>diego.hernandez.perez.cr@gmail.com</email>
+		<news>
+1.1.7
+ - Fixed License file to match the GitHub's license auto-detect feature
+
+1.1.6
+ - Corrected xterm not found error message which displayed wrong text
+
+1.1.5
+ - Added Spanish translations for Advance settings
+ - Updated French translation file to keep untranslated strings
+ - Updated English and French translations to capitalize some names
+ - Updated Addon screenshots
+ - Updated documentation
+
+1.1.4
+ - Added missing French translations to addon.xml
+
+1.1.3
+ - Before reenabling powersavings we now send Down key to Kodi to wake it up. Otherwise it will go to sleep when parameter is set.
+
+1.1.2
+ - Updated translation files headers
+
+1.1.1
+ - Use xterminal to start emulationstation to provide ttl for emulators in linux
+ - Add workaround - exit fullscreen Kodi during emulationstation - to fix emulators loading behind Kodi
+ - Add option to turn off powersavings while running emulationstation
+ - Added configuration options for xterm executable, switch for workaround and switch for powersavings
+ - Added french translations
+        </news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>fanart.jpg</screenshot>
+			<screenshot>resources/es-screenshots/theming_list.png</screenshot>
+			<screenshot>resources/es-screenshots/201_new_themes.png</screenshot>
+			<screenshot>resources/es-screenshots/snes_art.png</screenshot>
+			<screenshot>resources/es-screenshots/nes_art.png</screenshot>
+			<screenshot>resources/es-screenshots/fba_art.png</screenshot>
+			<screenshot>resources/es-screenshots/gba_art.png</screenshot>
+			<screenshot>resources/es-screenshots/gbc_art.png</screenshot>
+			<screenshot>resources/es-screenshots/gen_art.png</screenshot>
+			<screenshot>resources/es-screenshots/n64_art.png</screenshot>
+			<screenshot>resources/es-screenshots/neogeo_art.png</screenshot>
+			<screenshot>resources/es-screenshots/psx_art.png</screenshot>
+			<screenshot>resources/es-screenshots/saturn_art.png</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Selected.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Selected-Information.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-in-French.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-in-Spanish.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Settings.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Settings-Advance.jpg</screenshot>
+			<screenshot>resources/addon-screenshots/Addon-Settings-Edit-Executable.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
+</addons>
